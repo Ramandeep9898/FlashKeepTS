@@ -1,0 +1,36 @@
+.lf-aside-item {
+  display: flex;
+  gap: 16px;
+  font-size: 18px;
+  align-items: center;
+  font-weight: 500;
+  padding: 8px 16px;
+  color: var(--headingColorblack);
+
+  cursor: pointer;
+}
+.lf-aside {
+  /* margin: 0 24px 24px 24px; */
+  display: flex;
+  flex-direction: column;
+  gap: 190px;
+  min-width: 300px;
+  border-radius: 8px;
+  background-color: var(--post-gray-bg);
+}
+.bg-pur {
+  background-color: #764abc;
+}
+.profile {
+  padding: 16px;
+}
+.logout {
+  cursor: pointer;
+  font-size: 21px;
+}
+.activeLink {
+  color: #764abc;
+}
+.inactiveLink {
+  color: var(--headingColorblack);
+}
