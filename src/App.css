@@ -26,7 +26,9 @@
   cursor: pointer;
 }
 :root {
-  --headingColorblack: #ICIE21;
+  --text: #303030;
+  --grey: #676767;
+  --primary-yellow: #eb980a;
   --post-gray-bg: #6067701a;
   --grey-text: #0000008a;
 }
@@ -56,15 +58,9 @@
 }
 
 .main {
+  padding: 10px;
   display: flex;
   flex-direction: column;
-  width: 50%;
-  gap: 20px;
-}
-.right-aside {
-  height: 100%;
-  max-height: 100vh;
-  position: sticky;
-  top: 60.6px;
-  right: 0;
+  width: 70%;
+  /* gap: 20px; */
 }

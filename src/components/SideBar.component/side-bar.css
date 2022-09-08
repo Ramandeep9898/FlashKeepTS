@@ -5,9 +5,12 @@
   align-items: center;
   font-weight: 500;
   padding: 8px 16px;
-  color: var(--headingColorblack);
+  color: var(--text);
 
   cursor: pointer;
+}
+.lf-aside-items {
+  padding: 0 0 10px 0;
 }
 .lf-aside {
   /* margin: 0 24px 24px 24px; */
@@ -19,7 +22,7 @@
   background-color: var(--post-gray-bg);
 }
 .bg-pur {
-  background-color: #764abc;
+  background-color: var(--primary-yellow);
 }
 .profile {
   padding: 16px;
@@ -33,4 +36,14 @@
 }
 .inactiveLink {
   color: var(--headingColorblack);
+}
+.displayF {
+  display: flex;
+}
+.space-between {
+  align-content: space-between;
+}
+.list-options-btns {
+  display: flex;
+  gap: 5px;
 }
