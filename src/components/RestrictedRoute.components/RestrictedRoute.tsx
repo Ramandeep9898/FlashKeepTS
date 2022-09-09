@@ -6,7 +6,6 @@ export function RestrictedRoute() {
   interface UserProps {
     user?: string;
   }
-  const [name, setName] = useState<string | null>("");
   const user: UserProps = useAppSelector((state) => state.auth);
   const location = useLocation();
   return user.user ? (

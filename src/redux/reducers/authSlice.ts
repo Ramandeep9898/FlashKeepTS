@@ -3,7 +3,7 @@ import axios from "axios";
 
 interface AuthState {
   user?: string;
-  token?: string;
+  token?: string | null;
 }
 type LoginProps = {
   email: string;
@@ -18,7 +18,9 @@ type SignupProps = {
 };
 const initialState: AuthState = {
   user: "",
-  token: "",
+  token: localStorage.getItem("flashNotesToken")
+    ? localStorage.getItem("flashNotesToken")
+    : "",
 };
 
 export const login = createAsyncThunk(
@@ -61,10 +63,12 @@ export const authSlice = createSlice({
   extraReducers(builder) {
     builder
       .addCase(login.fulfilled, (state, action) => {
+        localStorage.setItem("flashNotesToken", action.payload.encodedToken);
         state.user = action.payload;
         state.token = action.payload.encodedToken;
       })
       .addCase(signUp.fulfilled, (state, action) => {
+        localStorage.setItem("flashNotesToken", action.payload.encodedToken);
         state.user = action.payload;
         state.token = action.payload.encodedToken;
       });
