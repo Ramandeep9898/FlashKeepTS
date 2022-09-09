@@ -1,0 +1,66 @@
+@import url(https://flashui.netlify.app/main.css);
+.mgT-20 {
+  margin-top: 20px;
+}
+.mgT-40 {
+  margin-top: 40px;
+}
+.mgT-32 {
+  margin-top: 32px;
+}
+.mgT-8 {
+  margin-top: 8px;
+}
+.mgT-16 {
+  margin-top: 16px;
+}
+.mgT-4 {
+  margin-top: 4px;
+}
+* {
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell,
+    Noto Sans, sans-serif, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial,
+    sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+.cursor {
+  cursor: pointer;
+}
+:root {
+  --text: #303030;
+  --grey: #676767;
+  --primary-yellow: #eb980a;
+  --post-gray-bg: #6067701a;
+  --grey-text: #0000008a;
+}
+.grey-color {
+  color: var(--grey-text);
+  line-height: 1;
+}
+.gap {
+  display: flex;
+  gap: 10px;
+}
+.header-position {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+.container-main {
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+}
+.left-aside-position {
+  height: 100%;
+  max-height: 100vh;
+  position: sticky;
+  top: 60.6px;
+}
+
+.main {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+  /* gap: 20px; */
+}
