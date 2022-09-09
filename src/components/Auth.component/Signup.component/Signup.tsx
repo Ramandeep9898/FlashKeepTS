@@ -2,11 +2,11 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { useAppDispatch } from "../../../redux/hook";
 import { LoginProps } from "../Login.component/Login.types";
+import { signUp } from "../../../redux/reducers/authSlice";
 
 export const SignUp = ({ setAuthVal }: LoginProps) => {
   const dispatch = useAppDispatch();
   const [signUpDetails, setSignUpDetails] = useState({
-    username: "",
     firstName: "",
     lastName: "",
     email: "",
@@ -16,10 +16,10 @@ export const SignUp = ({ setAuthVal }: LoginProps) => {
     message: "",
   });
 
-  //   const signUpHandler = () => {
-  //     console.log("signup details", signUpDetails);
-  //     dispatch(signUp(signUpDetails));
-  //   };
+  const signUpHandler = () => {
+    console.log("signup details", signUpDetails);
+    dispatch(signUp(signUpDetails));
+  };
 
   console.log(signUpDetails);
   return (
@@ -30,41 +30,12 @@ export const SignUp = ({ setAuthVal }: LoginProps) => {
             <p className="h3 color capitalize fW-700 text-center">sign up</p>
 
             <div className="input-box mgT-20">
-              <label
-                //   for="first-name"
-                className="textarea-label"
-              >
-                Username
-              </label>
-              <input
-                id="first-name"
-                type="text"
-                className="input"
-                placeholder="Username"
-                // valide
-                value={signUpDetails.username}
-                onChange={(e) => {
-                  setSignUpDetails({
-                    ...signUpDetails,
-                    username: e.target.value,
-                  });
-                }}
-              />
-            </div>
-
-            <div className="input-box mgT-20">
-              <label
-                //   for="email"
-                className="textarea-label"
-              >
-                email
-              </label>
+              <label className="textarea-label">email</label>
               <input
                 id="email"
                 type="email"
                 className="input"
                 placeholder="you@example.com"
-                // valide
                 value={signUpDetails.email}
                 onChange={(e) => {
                   setSignUpDetails({
@@ -76,18 +47,12 @@ export const SignUp = ({ setAuthVal }: LoginProps) => {
             </div>
 
             <div className="input-box mgT-20">
-              <label
-                //    for="first-name"
-                className="textarea-label"
-              >
-                first name
-              </label>
+              <label className="textarea-label">first name</label>
               <input
                 id="first-name"
                 type="text"
                 className="input"
                 placeholder="First Name"
-                // valide
                 value={signUpDetails.firstName}
                 onChange={(e) => {
                   setSignUpDetails({
@@ -99,18 +64,12 @@ export const SignUp = ({ setAuthVal }: LoginProps) => {
             </div>
 
             <div className="input-box mgT-20">
-              <label
-                //   for="last-name"
-                className="textarea-label"
-              >
-                last name
-              </label>
+              <label className="textarea-label">last name</label>
               <input
                 id="last-name"
                 type="email"
                 className="input"
                 placeholder="Last Name"
-                // valide
                 value={signUpDetails.lastName}
                 onChange={(e) => {
                   setSignUpDetails({
@@ -122,18 +81,12 @@ export const SignUp = ({ setAuthVal }: LoginProps) => {
             </div>
 
             <div className="input-box mgT-20">
-              <label
-                //   for="password"
-                className="textarea-label"
-              >
-                password
-              </label>
+              <label className="textarea-label">password</label>
               <input
                 id="password"
                 type="password"
                 className="input"
                 placeholder="**********"
-                // valide
                 value={signUpDetails.password}
                 onChange={(e) => {
                   setSignUpDetails({
@@ -154,18 +107,18 @@ export const SignUp = ({ setAuthVal }: LoginProps) => {
             </div>
             <button
               className="btn solid-pri-btn width100 mgT-20"
-              //   onClick={() => {
-              //     signUpHandler();
-              //   }}
+              onClick={() => {
+                signUpHandler();
+              }}
             >
               sign up
             </button>
 
             <p
               className="h5 color capitalize fW-500 text-center mgT-20 cursor"
-              //   onClick={() => {
-              //     setAuthVal(true);
-              //   }}
+              onClick={() => {
+                setAuthVal(true);
+              }}
             >
               already have a account{" "}
             </p>

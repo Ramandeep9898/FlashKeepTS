@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-// import { useDispatch } from "react-redux";
 import "./login.css";
 import { Link } from "react-router-dom";
 import { LoginProps } from "./Login.types";
@@ -43,7 +42,6 @@ export const Login = ({ setAuthVal }: LoginProps) => {
   //   }
   // };
   const loginHandler = (e: MouseEvent<HTMLButtonElement>) => {
-    console.log(loginDetails);
     dispatch(login(loginDetails));
   };
   const credentialHandler = () => {

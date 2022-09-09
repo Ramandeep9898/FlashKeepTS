@@ -11,14 +11,13 @@ type LoginProps = {
 };
 
 type SignupProps = {
-  firstname: string;
-  lastname: string;
+  firstName: string;
+  lastName: string;
   email: string;
   password: string;
 };
 const initialState: AuthState = {
   user: "",
-  //    loading: false,
   token: "",
 };
 
@@ -60,11 +59,15 @@ export const authSlice = createSlice({
   reducers: {},
 
   extraReducers(builder) {
-    builder.addCase(login.fulfilled, (state, action) => {
-      console.log(action, state);
-      state.user = action.payload;
-      state.token = action.payload.encodedToken;
-    });
+    builder
+      .addCase(login.fulfilled, (state, action) => {
+        state.user = action.payload;
+        state.token = action.payload.encodedToken;
+      })
+      .addCase(signUp.fulfilled, (state, action) => {
+        state.user = action.payload;
+        state.token = action.payload.encodedToken;
+      });
   },
 });
 
