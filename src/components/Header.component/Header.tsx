@@ -1,4 +1,4 @@
-import React from "react";
+import { FiLogOut } from "react-icons/fi";
 
 export const Header = () => {
   return (
@@ -8,10 +8,10 @@ export const Header = () => {
           <header className="navigation">
             <section className="nav-container-startsec">
               {/* logo */}
-              <span className="nav-title">Flash Connect</span>
+              <span className="nav-title">Flash Keep</span>
             </section>
-            <section className="nav-container-endsec">
-              {/* header icons */}
+            <section className="nav-container-endsec cursor">
+              <FiLogOut />
             </section>
           </header>
         </div>
