@@ -1,11 +1,19 @@
 import "./App.css";
+import { useEffect } from "react";
 import { Route, Routes } from "react-router-dom";
 import { Home } from "./pages/Home";
 import { Auth } from "./components/Auth.component/Auth.component/Auth";
 import { RestrictedRoute } from "./components/RestrictedRoute.components/RestrictedRoute";
 import { PrivateRoute } from "./components/PrivateRoute.component/PrivateRoute";
+import { getUserNotes } from "./redux/reducers/notesSlice";
+import { useAppDispatch } from "./redux/hook";
 
 function App() {
+  const dispatch = useAppDispatch();
+
+  useEffect(() => {
+    dispatch(getUserNotes());
+  }, []);
   return (
     <div className="App">
       <Routes>

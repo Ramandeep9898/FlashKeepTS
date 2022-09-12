@@ -13,8 +13,10 @@
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 1px 2px 0 rgb(60 64 67 / 30%), 0 2px 6px 2px rgb(60 64 67 / 15%);
+  /* background-color: #f4dcfe; */
 }
 .title-input {
+  background-color: transparent;
   font-size: 16px;
   border: none;
   outline: none;
@@ -40,6 +42,8 @@
   width: 20px;
   height: 20px;
   border-radius: 20px;
+  border: none;
+  box-shadow: 0px 0px 2px 1px rgba(155, 155, 155, 0.2);
 }
 .color1 {
   background-color: #f4dcfe;
@@ -58,6 +62,7 @@
   gap: 5px;
 }
 .list-options-bar {
+  /* font-size: 18px; */
   display: flex;
   justify-content: space-between;
 }
@@ -66,6 +71,9 @@
   color: var(--text);
   font-size: 16px;
   border: none;
+}
+.fontSize {
+  font-size: 20px;
 }
 
 .dropdown {
@@ -102,4 +110,10 @@
 
 .dropdown:hover .dropbtn {
   background-color: #fff;
+}
+
+.send-btn {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
 }
