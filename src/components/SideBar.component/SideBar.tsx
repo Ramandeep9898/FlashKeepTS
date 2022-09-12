@@ -35,7 +35,7 @@ export const SideBar = () => {
             </li>
           </Link>
 
-          <Link to="/">
+          <Link to="/trash">
             <li className="lf-aside-item mgT-8">
               <FiTrash />
               <span>Trash</span>

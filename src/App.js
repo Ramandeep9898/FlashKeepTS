@@ -7,6 +7,7 @@ import { RestrictedRoute } from "./components/RestrictedRoute.components/Restric
 import { PrivateRoute } from "./components/PrivateRoute.component/PrivateRoute";
 import { getUserNotes } from "./redux/reducers/notesSlice";
 import { useAppDispatch } from "./redux/hook";
+import { Trash } from "./pages/Trash";
 
 function App() {
   const dispatch = useAppDispatch();
@@ -19,6 +20,7 @@ function App() {
       <Routes>
         <Route element={<RestrictedRoute />}>
           <Route path="/" element={<Auth />} />
+          <Route path="/trash" element={<Trash />} />
         </Route>
 
         <Route element={<PrivateRoute />}>

@@ -12,9 +12,9 @@ import {
   trashNote,
 } from "../../redux/reducers/notesSlice";
 
-export const Note = ({ note }: EachNoteType) => {
+export const Note = ({ note, flag }: EachNoteType) => {
   const dispatch = useAppDispatch();
-  console.log(note);
+  console.log(flag);
   const { title, content, priority, _id, tags, date, time } = note;
   return (
     <>
@@ -61,8 +61,13 @@ export const Note = ({ note }: EachNoteType) => {
                 <button
                   className="send-btn fontSize"
                   onClick={() => {
-                    dispatch(archiveNote(note));
-                    dispatch(deleteNoteHandler());
+                    if (flag === "home") {
+                      dispatch(archiveNote(note));
+                      dispatch(deleteNoteHandler());
+                    }
+                    if (flag === "trash") {
+                      // dispatch(deleteNoteHandler());
+                    }
                   }}
                 >
                   <BsArchive />

@@ -170,7 +170,9 @@ export const NewNote = () => {
         </div>
       </div>
       {notes.length !== 0
-        ? notes.map((noteDeatails) => <Note note={noteDeatails} />)
+        ? notes.map((noteDeatails) => (
+            <Note note={noteDeatails} flag={"home"} />
+          ))
         : ""}
     </>
   );

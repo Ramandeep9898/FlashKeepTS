@@ -178,23 +178,23 @@ export const archiveNote = createAsyncThunk<any, NoteAttr>(
     }
   }
 );
-export const unarchiveNote = createAsyncThunk<any, NoteAttr>(
-  "notes/unarchiveNote",
-  async (note, { rejectWithValue }) => {
-    const encodedToken: string = localStorage.getItem("flashNotesToken") || "";
-    const { _id } = note;
-    try {
-      const response = await axios.post(
-        `/api/archives/restore/${_id}`,
-        {},
-        { headers: { authorization: encodedToken } }
-      );
-      return response.data;
-    } catch (error) {
-      return rejectWithValue(error);
-    }
-  }
-);
+// export const unarchiveNote = createAsyncThunk<any, NoteAttr>(
+//   "notes/unarchiveNote",
+//   async (note, { rejectWithValue }) => {
+//     const encodedToken: string = localStorage.getItem("flashNotesToken") || "";
+//     const { _id } = note;
+//     try {
+//       const response = await axios.post(
+//         `/api/archives/restore/${_id}`,
+//         {},
+//         { headers: { authorization: encodedToken } }
+//       );
+//       return response.data;
+//     } catch (error) {
+//       return rejectWithValue(error);
+//     }
+//   }
+// );
 
 export const notesSlice = createSlice({
   name: "auth",
@@ -210,19 +210,17 @@ export const notesSlice = createSlice({
         state.notes = action.payload.notes;
       })
       .addCase(trashNote.fulfilled, (state, action) => {
-        // state.notes = action.payload.notes;
-        console.log(action);
+        state.notes = action.payload.notes;
+        state.trash = action.payload.trash;
       })
 
       .addCase(deleteNoteHandler.fulfilled, (state, action) => {
-        // state.notes = action.payload.notes;
         console.log(action);
         state.notes = action.payload.notes;
       })
       .addCase(archiveNote.fulfilled, (state, action) => {
-        // state.notes = action.payload.notes;
         console.log(action);
-        // state.archive = action.payload.notes;
+        state.archive = action.payload.notes;
       });
   },
 });
