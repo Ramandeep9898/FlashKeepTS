@@ -1,8 +1,6 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
-import { useState } from "react";
 
-const [succToast, setSuccToast] = useState<string>("");
 interface AuthState {
   user?: string;
   token?: string | null;
