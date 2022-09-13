@@ -16,14 +16,12 @@ export const Note = ({ note, flag }: EachNoteType) => {
   const dispatch = useAppDispatch();
   console.log(flag);
   const { title, content, priority, _id, tags, date, time } = note;
+  console.log("flag", flag);
   return (
     <>
       <div className="selector">
         <div className="selector-container">
-          <div
-            className="selector-body"
-            // style={{ backgoundColor: note.bgcolor }}
-          >
+          <div className="selector-body">
             <div className="title-input create-note-Title">{title}</div>
             <li className="list-divider mgT-16"></li>
 
@@ -38,41 +36,22 @@ export const Note = ({ note, flag }: EachNoteType) => {
 
             <div className="list-options-bar  f-spa-btw mgT-16">
               <div className="list-options">
-                {/* <button className="color-pattern color1 cursor"></button>
-                <button className="color-pattern color2 cursor"></button>
-                <button className="color-pattern color3 cursor"></button>
-                <button className="color-pattern color4 cursor"></button> */}
-              </div>
-
-              <div className="list-options-btns fontSize cursor">
-                <button
-                  className="send-btn fontSize"
-                  onClick={() => {
-                    dispatch(trashNote(note));
-                    dispatch(deleteNoteHandler());
-                  }}
-                >
-                  <FiTrash />
-                </button>
-                <AiOutlineEdit />
-                <MdLabelOutline />
-
-                <TbPinned />
-                <button
-                  className="send-btn fontSize"
-                  onClick={() => {
-                    if (flag === "home") {
-                      dispatch(archiveNote(note));
+                {flag === "home" || "archive" ? (
+                  <button
+                    className="send-btn fontSize"
+                    onClick={() => {
+                      dispatch(trashNote(note));
                       dispatch(deleteNoteHandler());
-                    }
-                    if (flag === "trash") {
-                      // dispatch(deleteNoteHandler());
-                    }
-                  }}
-                >
-                  <BsArchive />
-                </button>
+                    }}
+                  >
+                    <FiTrash />
+                  </button>
+                ) : (
+                  <></>
+                )}
               </div>
+
+              <div className="list-options-btns  cursor"></div>
             </div>
           </div>
         </div>
