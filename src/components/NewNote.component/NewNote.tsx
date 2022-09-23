@@ -1,7 +1,7 @@
 import "./new-note.css";
 import { FaPaperPlane } from "react-icons/fa";
-import { useState, useEffect } from "react";
-import { createNewNotes, getUserNotes } from "../../redux/reducers/notesSlice";
+import { useState } from "react";
+import { createNewNotes } from "../../redux/reducers/notesSlice";
 import { useAppDispatch, useAppSelector } from "../../redux/hook";
 import { Note } from "../Note.component/Note";
 
@@ -32,9 +32,6 @@ export const NewNote = () => {
     }
   };
 
-  useEffect(() => {
-    dispatch(getUserNotes());
-  }, []);
   return (
     <>
       <div className="selector">

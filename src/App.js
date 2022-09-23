@@ -5,17 +5,10 @@ import { Home } from "./pages/Home";
 import { Auth } from "./components/Auth.component/Auth.component/Auth";
 import { RestrictedRoute } from "./components/RestrictedRoute.components/RestrictedRoute";
 import { PrivateRoute } from "./components/PrivateRoute.component/PrivateRoute";
-import { getUserNotes } from "./redux/reducers/notesSlice";
-import { useAppDispatch } from "./redux/hook";
 import { Trash } from "./pages/Trash";
 import { Archive } from "./pages/Archive";
 
 function App() {
-  const dispatch = useAppDispatch();
-
-  useEffect(() => {
-    dispatch(getUserNotes());
-  }, []);
   return (
     <div className="App">
       <Routes>
