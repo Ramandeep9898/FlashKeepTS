@@ -28,7 +28,7 @@ export const SideBar = () => {
             </li>
           </Link>
 
-          <Link to="/bookmarks">
+          <Link to="/archive">
             <li className="lf-aside-item mgT-8">
               <BsArchive />
               <span>Archives</span>

@@ -203,7 +203,6 @@ export const notesSlice = createSlice({
   extraReducers(builder) {
     builder
       .addCase(getUserNotes.fulfilled, (state, action) => {
-        console.log(action);
         state.notes = action.payload.notes;
       })
       .addCase(createNewNotes.fulfilled, (state, action) => {
@@ -213,14 +212,12 @@ export const notesSlice = createSlice({
         state.notes = action.payload.notes;
         state.trash = action.payload.trash;
       })
-
       .addCase(deleteNoteHandler.fulfilled, (state, action) => {
-        console.log(action);
         state.notes = action.payload.notes;
       })
       .addCase(archiveNote.fulfilled, (state, action) => {
-        console.log(action);
-        state.archive = action.payload.notes;
+        state.notes = action.payload.notes;
+        state.archive = action.payload.archives;
       });
   },
 });
