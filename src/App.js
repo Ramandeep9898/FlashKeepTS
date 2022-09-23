@@ -1,5 +1,4 @@
 import "./App.css";
-import { useEffect } from "react";
 import { Route, Routes } from "react-router-dom";
 import { Home } from "./pages/Home";
 import { Auth } from "./components/Auth.component/Auth.component/Auth";
