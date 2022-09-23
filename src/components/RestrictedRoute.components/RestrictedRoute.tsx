@@ -1,6 +1,5 @@
 import { useLocation, Navigate, Outlet } from "react-router-dom";
 import { useAppSelector } from "../../redux/hook";
-import { useState } from "react";
 
 export function RestrictedRoute() {
   interface UserProps {

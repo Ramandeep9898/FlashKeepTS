@@ -4,12 +4,9 @@ import { MdLabelOutline } from "react-icons/md";
 import { FiTrash } from "react-icons/fi";
 import { CgProfile } from "react-icons/cg";
 import { BsArchive } from "react-icons/bs";
-// import { useDispatch, useSelector } from "react-redux";
-// import { logout } from "../../redux/reducers/authSlice";
-import { Link, NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 export const SideBar = () => {
-  //   const dispatch = useDispatch();
   return (
     <>
       <nav className="lf-aside">

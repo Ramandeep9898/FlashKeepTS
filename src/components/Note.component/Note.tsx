@@ -1,21 +1,13 @@
 import "./note.css";
-import { AiOutlineEdit } from "react-icons/ai";
-import { MdLabelOutline } from "react-icons/md";
 import { FiTrash } from "react-icons/fi";
-import { TbPinned } from "react-icons/tb";
-import { BsArchive } from "react-icons/bs";
 import { EachNoteType } from "./Notes.types";
 import { useAppDispatch } from "../../redux/hook";
-import {
-  deleteNoteHandler,
-  archiveNote,
-  trashNote,
-} from "../../redux/reducers/notesSlice";
+import { deleteNoteHandler, trashNote } from "../../redux/reducers/notesSlice";
 
 export const Note = ({ note, flag }: EachNoteType) => {
   const dispatch = useAppDispatch();
   console.log(flag);
-  const { title, content, priority, _id, tags, date, time } = note;
+  const { title, content } = note;
   console.log("flag", flag);
   return (
     <>

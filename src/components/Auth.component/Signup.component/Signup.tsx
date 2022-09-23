@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
 import { useAppDispatch } from "../../../redux/hook";
 import { LoginProps } from "../Login.component/Login.types";
 import { signUp } from "../../../redux/reducers/authSlice";
@@ -12,12 +11,8 @@ export const SignUp = ({ setAuthVal }: LoginProps) => {
     email: "",
     password: "",
   });
-  const [errorMessage, setErrorMessage] = useState({
-    message: "",
-  });
 
   const signUpHandler = () => {
-    console.log("signup details", signUpDetails);
     dispatch(signUp(signUpDetails));
   };
 

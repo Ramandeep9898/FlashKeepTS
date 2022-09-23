@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import "./login.css";
-import { Link } from "react-router-dom";
 import { LoginProps } from "./Login.types";
 import { useAppDispatch } from "../../../redux/hook";
 import { login } from "../../../redux/reducers/authSlice";
@@ -13,34 +12,14 @@ export const Login = ({ setAuthVal }: LoginProps) => {
     email: "",
     password: "",
   });
-  const [errorMessage, setErrorMessage] = useState({
-    message: "",
-  });
+
   const changeHandler = (e: ChangeEvent<HTMLInputElement>) => {
     setLoginDetails((prevDetail) => ({
       ...prevDetail,
       [e.target.name]: e.target.value,
     }));
   };
-  const emailRegex =
-    /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-  const passwordRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*\W).{8,}$/;
 
-  // const loginHandler = () => {
-  //   if (
-  //     loginDetails.email.match(emailRegex) &&
-  //     loginDetails.password.match(passwordRegex)
-  //   ) {
-  //     setErrorMessage({
-  //       message: "",
-  //     });
-  //     logInAuth(loginDetails);
-  //   } else {
-  //     setErrorMessage({
-  //       message: "error",
-  //     });
-  //   }
-  // };
   const loginHandler = (e: MouseEvent<HTMLButtonElement>) => {
     dispatch(login(loginDetails));
   };
@@ -59,7 +38,6 @@ export const Login = ({ setAuthVal }: LoginProps) => {
           <div className="login-body">
             <p className="h3 color capitalize fW-700 text-center">login</p>
             <div className="input-box mgT-20">
-              <div>{errorMessage.message}</div>
               <label className="textarea-label">email</label>
               <input
                 id="text"
